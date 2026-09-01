@@ -366,9 +366,7 @@ local function modified_suffix(bufnr, refresh)
 
   utils.create_singleton_autocmd({ "OptionSet" }, {
     pattern = "modified",
-    callback = function(_)
-      refresh()
-    end,
+    callback = refresh,
   })
 
   return suffix
